@@ -36,9 +36,19 @@ module RobotFrame(length){
 
 module CdSPhotoCell(){
     union(){
-        cube([5.5, 4.5, 40]);
-        translate([0, 1.25, -34]){
-            cube([5.5, 2, 34]);
+        cube([5.7, 4.7, 40]);
+        translate([0, 1.35, -4]){
+            cube([5.7, 2, 4]);
+        }
+        translate([4.7, 2.35, -4]){
+            rotate([0, 180, 0]){
+                cylinder(r=1, h=30);
+            }
+        }
+        translate([1, 2.35, -4]){
+            rotate([0, 180, 0]){
+                cylinder(r=1, h=30);
+            }
         }
     }
 }
@@ -74,9 +84,9 @@ module CdSSocket(){
 
 module IRSensorClip(){
     difference(){
-        cube([14, 12, 34]);
-        translate([9, 1.85, 2.35]){
-            cube([5, 8.3, 1.65]);
+        cube([8, 12, 34]);
+        translate([3, 1.75, 2.35]){
+            cube([5, 8.5, 1.65]);
         }
     }
 }
@@ -117,9 +127,9 @@ module FanMount(){
     translate([0, 0, 0]){
         rotate([0, 0, 0]){
             difference(){
-                cube([60, 15, 17]);
+                cube([62, 15, 17]);
                 
-                translate([0, 0 , -3.5]){
+                translate([1, 1 , -3.5]){
                     Fan();
                 }
             }
@@ -134,27 +144,27 @@ module FullMount(){
                 RobotMount();
             }
         }
-        translate([1, 1, 0]){
+        translate([-1, 1, 0]){
             rotate([0, 0, -90]){
                 CdSSocket(); 
             }
         }
-        translate([69, 1, 0]){
+        translate([71, 1, 0]){
             rotate([0, 0, -90]){
                 CdSSocket(); 
             }
         }
-        translate([62, 92, 14]){
+        translate([62, 92, 8]){
             rotate([0, 90, -90]){
                 IRSensorClip(); 
             }
         }
-        translate([6, 92, 14]){
+        translate([6, 92, 8]){
             rotate([0, 90, -90]){
                 IRSensorClip(); 
             }
         }
-        translate([70, 0, 0]){
+        translate([71, 0, 0]){
             rotate([0, 0, 180]){
                 FanMount();
             }
