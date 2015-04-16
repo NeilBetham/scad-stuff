@@ -34,25 +34,6 @@ module RobotFrame(length){
     }
 }
 
-module CdSPhotoCell(){
-    union(){
-        cube([5.7, 4.7, 40]);
-        translate([0, 1.35, -4]){
-            cube([5.7, 2, 4]);
-        }
-        translate([4.7, 2.35, -4]){
-            rotate([0, 180, 0]){
-                cylinder(r=1, h=30);
-            }
-        }
-        translate([1, 2.35, -4]){
-            rotate([0, 180, 0]){
-                cylinder(r=1, h=30);
-            }
-        }
-    }
-}
-
 module FrameClip(){
     translate([0, 0, 10]){
         rotate([0, 90, 0]){
@@ -66,6 +47,25 @@ module FrameClip(){
     }
 }
 
+module CdSPhotoCell(){
+    union(){
+        cube([6, 5, 40]);
+        translate([0, 1.5, -4]){
+            cube([6, 2, 4]);
+        }
+        translate([5, 2.5, -4]){
+            rotate([0, 180, 0]){
+                cylinder(r=1, h=30);
+            }
+        }
+        translate([1, 2.5, -4]){
+            rotate([0, 180, 0]){
+                cylinder(r=1, h=30);
+            }
+        }
+    }
+}
+
 module CdSSocket(){
     difference(){
         hull(){
@@ -74,7 +74,7 @@ module CdSSocket(){
             }
             cube([10, 10, 20]);
         }
-        translate([10, 7.25, 10]){
+        translate([10, 7.5, 10]){
             rotate([180, 0, 0]){
                 CdSPhotoCell();
             }
@@ -85,8 +85,8 @@ module CdSSocket(){
 module IRSensorClip(){
     difference(){
         cube([8, 12, 34]);
-        translate([3, 1.75, 2.35]){
-            cube([5, 8.5, 1.65]);
+        translate([3, 1.5, 2.35]){
+            cube([5, 9, 1.65]);
         }
     }
 }
@@ -95,16 +95,16 @@ module Fan(){
     difference(){
         cube([60, 60,25]);
         
-        translate([0, 0, 3.5]){
+        translate([0, 0, 4.75]){
             difference(){
                 translate([-5, -5, 0]){
-                    cube([70, 70, 17]);
+                    cube([70, 70, 14.5]);
                 }
                 translate([30, 30, 0]){
                     union(){
                         rotate_extrude($fn=200){
                                 polygon(
-                                    points = [ [0, 0], [0, 17], [32.286, 17], [30, 14.15], [30, 2.85], [32.286, 0] ]
+                                    points = [ [0, 0], [0, 14.5], [32.286, 14.5], [30, 12.9], [30, 1.6], [32.286, 0] ]
                                 );
                         }
                         translate([0, 0, 0]){
@@ -127,9 +127,9 @@ module FanMount(){
     translate([0, 0, 0]){
         rotate([0, 0, 0]){
             difference(){
-                cube([62, 15, 17]);
+                cube([62, 15, 14.5]);
                 
-                translate([1, 1 , -3.5]){
+                translate([1, 1 , -4.75]){
                     Fan();
                 }
             }
