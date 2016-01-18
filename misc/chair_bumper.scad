@@ -17,32 +17,32 @@ module ChairBumper(){
             }
         }
 
-		  translate([-25, 44, 0]){
+		  translate([-25, 44, -1]){
 				rotate([0, 0, -90]){
 					BendyCutOuts();
 				}
 		  }
-		  translate([0, 44, 0]){
+		  translate([-.01, 44, -1]){
 				rotate([0, 0, -90]){
 					BendyCutOuts();
 				}
 		  }
-		  translate([25, 44, 0]){
+		  translate([25, 44, -1]){
 				rotate([0, 0, -90]){
 					BendyCutOuts();
 				}
 		  }
-		  translate([50, 44, 0]){
+		  translate([50, 44, -1]){
 				rotate([0, 0, -90]){
 					BendyCutOuts();
 				}
 		  }
-		  translate([75, 44, 0]){
+		  translate([75, 44, -1]){
 				rotate([0, 0, -90]){
 					BendyCutOuts();
 				}
 		  }
-		  translate([100, 44, 0]){
+		  translate([100, 44, -1]){
 				rotate([0, 0, -90]){
 					BendyCutOuts();
 				}
