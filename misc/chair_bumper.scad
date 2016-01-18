@@ -1,3 +1,10 @@
+module BendyCutOuts(){
+	cube([2, 20, 30]);
+	translate([6, 12.5, 0]) {
+		cube([2, 20, 30]);
+	}
+}
+
 module ChairBumper(){
     difference(){
         cube([120, 80, 22]);
@@ -9,6 +16,37 @@ module ChairBumper(){
                 }
             }
         }
+
+		  translate([-25, 44, 0]){
+				rotate([0, 0, -90]){
+					BendyCutOuts();
+				}
+		  }
+		  translate([0, 44, 0]){
+				rotate([0, 0, -90]){
+					BendyCutOuts();
+				}
+		  }
+		  translate([25, 44, 0]){
+				rotate([0, 0, -90]){
+					BendyCutOuts();
+				}
+		  }
+		  translate([50, 44, 0]){
+				rotate([0, 0, -90]){
+					BendyCutOuts();
+				}
+		  }
+		  translate([75, 44, 0]){
+				rotate([0, 0, -90]){
+					BendyCutOuts();
+				}
+		  }
+		  translate([100, 44, 0]){
+				rotate([0, 0, -90]){
+					BendyCutOuts();
+				}
+		  }
     }
 }
 
