@@ -4,10 +4,10 @@ module FlashLightHolderTop() {
     difference(){
         union(){
             translate([0, 0, 12]){
-                cube([10, 37.5, 24], center=true);
+                cube([10, 36, 24], center=true);
             }
-            translate([0, 0, 4]){
-                cube([10, 52, 8], center=true);
+            translate([0, 0, 5]){
+                cube([10, 52, 10], center=true);
             }
         }
         translate([-20, 0, 0]){
@@ -16,7 +16,7 @@ module FlashLightHolderTop() {
             }
         }
         translate([0, 0, 19]){
-            cube([8, 50, 3.85], center=true);
+            cube([8, 50, 4], center=true);
         }
         translate([0, 22.5, -50]){
             rotate([0, 0, 0]){
