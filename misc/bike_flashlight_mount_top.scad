@@ -30,5 +30,6 @@ module FlashLightHolderTop() {
         }
     }
 }
-
-FlashLightHolderTop();
+translate([0, 0, 5]){rotate([0, 90, 0]){
+    FlashLightHolderTop();
+}}
