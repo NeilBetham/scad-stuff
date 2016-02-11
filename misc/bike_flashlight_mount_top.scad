@@ -15,8 +15,8 @@ module FlashLightHolderTop() {
                 cylinder(h=40, d=31.62);
             }
         }
-        translate([0, 0, 19]){
-            cube([8, 50, 4], center=true);
+        translate([0, 0, 19.25]){
+            cube([8, 50, 4.5], center=true);
         }
         translate([0, 22.5, -50]){
             rotate([0, 0, 0]){
