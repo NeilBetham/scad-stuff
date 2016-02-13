@@ -3,9 +3,11 @@ $fn = 200;
 module AppleCinemaDisplayVesaMount() {
     difference(){
         union(){
-            cube([120, 120, 10], center=true);
-            translate([0, -10, 10]){
-                cube([60, 50, 20], center=true);
+            translate([-60, -60, 0]){
+                cube([120, 120, 10]);
+            }
+            translate([-30, -35, 10]){
+                cube([60, 50, 10]);
             }
         }
         
@@ -38,22 +40,22 @@ module AppleCinemaDisplayVesaMount() {
         }
         
         // Display arm slot
-        translate([0, 0, 12.5]){
-            cube([44, 6.5, 15], center=true);
+        translate([-22, -3.25, 5]){
+            cube([44, 6.5, 15]);
         }
         
-        // Arm holes
-        translate([0, -50, 12.5]){
+        // Arm screw holes
+        translate([0, -50, 13.5]){
             rotate([-90, 0, 0]){
                 cylinder(d=3.5, h=100);
             }
         }
-        translate([16, -50, 12.5]){
+        translate([16, -50, 13.5]){
             rotate([-90, 0, 0]){
                 cylinder(d=3.5, h=100);
             }
         }
-        translate([-16, -50, 12.5]){
+        translate([-16, -50, 13.5]){
             rotate([-90, 0, 0]){
                 cylinder(d=3.5, h=100);
             }
