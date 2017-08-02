@@ -21,6 +21,22 @@ module PowerStripDeskMount() {
         translate([20, 65, 25]){rotate([0, 90, 45]){
             cylinder(h = 20, d = 4.3, center = true);
         }}
+        
+        translate([-5, -53, -5]){rotate([0, 0, 0]){
+            cube([60, 60, 60]);
+        }}
+        
+        translate([0, 20, 20]){rotate([0, 90, 0]){
+            cylinder(h = 20, d = 4.3, center = true);
+        }}
+        
+        translate([0, 20, 30]){rotate([0, 90, 0]){
+            cylinder(h = 20, d = 4.3, center = true);
+        }}
+        
+        translate([0, 30, 25]){rotate([0, 90, 0]){
+            cylinder(h = 20, d = 4.3, center = true);
+        }}
     }
 }
 
