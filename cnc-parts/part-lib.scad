@@ -13,19 +13,19 @@ module ScrewSlot(diameter, width, length){
 }
 
 module FixedLeadScrewBushing(){  
-    rotate([-90, 0, 90]) translate([-21, -27, -20]) union(){
-        intersection(){
-            translate([21, 27, 0]) cylinder(d = 54, h= 20);
-            cube([42, 60, 20]);
+    rotate([0, -90, 0]) translate([0, 0, 0]) union(){
+        translate([0, 0, -10]) intersection(){
+            cylinder(d = 54, h= 20, center = true);
+            cube([46, 46, 20], center = true);
         }
         
-        translate([21, 27, 20]) cylinder(d = 36, h = 18);
-        translate([21, 27, 36]) cylinder(d = 16, h = 100);
+        translate([0, 0, 0]) cylinder(d = 36, h = 18);
+        translate([0, 0, 18]) cylinder(d = 18, h = 100);
         
-        translate([6, 12, 20]) cylinder(d = 5.2, h = 116);
-        translate([36, 42, 20]) cylinder(d = 5.2, h = 116);
-        translate([6, 42, 20]) cylinder(d = 5.2, h = 116);
-        translate([36, 12, 20]) cylinder(d = 5.2, h = 116);
+        for(i = [45:90:315]){
+            screwRadius = 22;
+            translate([screwRadius * sin(i), screwRadius * cos(i), 0]) cylinder(d = 5.2, h = 116);
+        }
     }
 }
 
