@@ -1,9 +1,11 @@
 module BeltRecess(){
     hull(){
-        translate([107, 0, 0]) cylinder(d = 66, h= 50);
-        translate([33, 0, 0]) cylinder(d = 42, h= 50);
+        translate([107, 0, 0]) cylinder(d = 52, h= 50);
+        translate([33, 0, 0]) cylinder(d = 34, h= 50);
     }
 }
+
+
 
 module ScrewSlot(diameter, width, length){
     hull(){
@@ -51,31 +53,65 @@ module NEMA24MotorMount(slidePlay){
         cube([102, 62 + slidePlay, 62]);
         
         translate([102, 7.5, 7.5]) rotate([0, 90, 0]) {
-            ScrewSlot(5, slidePlay, 50);
+            ScrewSlot(5, slidePlay, 100);
         }
         
         translate([102, (62 + slidePlay) - 7.5, 7.5]) rotate([0, 270, 180]) {
-            ScrewSlot(5, slidePlay, 50);
+            ScrewSlot(5, slidePlay, 100);
         }
         
         translate([102, (62 + slidePlay) - 7.5, 62 - 7.5]) rotate([0, 270, 180]) {
-            ScrewSlot(5, slidePlay, 50);
+            ScrewSlot(5, slidePlay, 100);
         }
         
         translate([102, 7.5, 62 - 7.5]) rotate([0, 90, 0]) {
-            ScrewSlot(5, slidePlay, 50);
+            ScrewSlot(5, slidePlay, 100);
         }
         
         translate([102, 31, 31]) rotate([0, 90, 0]) {
-            ScrewSlot(40, slidePlay, 50);
+            ScrewSlot(40, slidePlay, 100);
         }
     }
 }
 
 module TSlotGuide(length, guideCount){
-    translate([0, 0, 0.625]){
+    translate([0, 0, 0.5]){
         for (index = [0: guideCount - 1]) {
-            translate([(length / 2), 10 + (index * 20), 0]) cube([length, 4.8, 1.25], center = true);
+            translate([(length / 2), 10 + (index * 20), 0]) cube([length, 4.8, 1], center = true);
         }
+    }
+}
+
+module LimitSensorMount(){
+    translate([0, 0, 0]) difference(){
+        union(){
+            cube([32, 20, 5]);
+        }
+        
+        translate([2.5, 1.5, 3.5]) cube([27, 17, 2]);
+        
+        translate([25.5, 10, -50]) cylinder(d = 3.8, h = 100);
+    }
+}
+
+module CompactLimitSensorMount(){
+    translate([0, 0, 0]) difference(){
+        union(){
+            cube([27, 20, 5]);
+        }
+        
+        translate([0, 1.5, 3.5]) cube([27, 17, 2]);
+        
+        translate([20.5, 10, -50]) cylinder(d = 3.8, h = 100);
+    }
+}
+
+module MagnetHolder(){
+    translate([0, 0, 0]) difference(){
+        union(){
+            cube([18, 18, 6]);
+        }
+        
+        translate([2.5, 2.5, 1.35]) cube([19, 13, 3.3]);
     }
 }
